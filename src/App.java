@@ -1,3 +1,5 @@
+import java.util.Calendar;
+
 public class App {
     static final int MAX_RANGE_NUMBER = 30;
     static final int MIN_RANGE_NUMBER = 10;
@@ -6,7 +8,7 @@ public class App {
 
     static final String HELLO_WORD = "Привет";
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         int number = 1;
         double floatNumber = 1.1;
         boolean checkSum = floatNumber + number == 2.2;
@@ -34,6 +36,9 @@ public class App {
 
         String name = "Sergey";
         System.out.println(App.getHello(name));
+
+        int year = (int) Math.round(Math.random() * Calendar.getInstance().get(Calendar.YEAR));
+        System.out.println(App.isLeapYear(year));
     }
 
     private static String getHello(String name) {
@@ -55,5 +60,14 @@ public class App {
 
     private static String checkIntSign(int intNumber) {
         return intNumber < 0 ? intNumber + " is unsigned int" : intNumber + " is signed int";
+    }
+
+    private static String isLeapYear(int year) throws Exception {
+        if (year < 0) {
+            throw new Exception("Validation error - year param must be ad");
+        }
+        return year % 4 == 0 && (year % 100 > 0 || year % 400 == 0)
+                ? year + " is a leap year"
+                : year + " is not a leap year";
     }
 }
