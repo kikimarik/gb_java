@@ -4,6 +4,8 @@ public class App {
 
     static final int INT_RANGE_NUMBER = 10;
 
+    static final String HELLO_WORD = "Привет";
+
     public static void main(String[] args) {
         int number = 1;
         double floatNumber = 1.1;
@@ -29,6 +31,13 @@ public class App {
         System.out.println(App.checkIntSign(intNumber));
 
         System.out.println(App.isUnsignedInt(intNumber));
+
+        String name = "Sergey";
+        System.out.println(App.getHello(name));
+    }
+
+    private static String getHello(String name) {
+        return App.HELLO_WORD + ", " + name;
     }
 
     private static boolean isUnsignedInt(int intNumber) {
