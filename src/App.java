@@ -27,6 +27,12 @@ public class App {
                 Math.random() * App.INT_RANGE_NUMBER - Math.random() * App.INT_RANGE_NUMBER
         );
         System.out.println(App.checkIntSign(intNumber));
+
+        System.out.println(App.isUnsignedInt(intNumber));
+    }
+
+    private static boolean isUnsignedInt(int intNumber) {
+        return intNumber < 0;
     }
 
     private static boolean checkFromRange(int firstInt, int secondInt) {
