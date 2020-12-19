@@ -7,5 +7,15 @@ public class App {
         String str = "I`m the string";
         String charString = String.valueOf(a);
         String[] strArr = { str, str.replaceFirst("the", charString) };
+
+        float first = (float) 1.2;
+        float second = (float) 1.3;
+        float third = (float) 1.4;
+        float fourth = (float) 1.05;
+        System.out.println(App.getSummary(first, second, third, fourth));
+    }
+
+    private static float getSummary(float a, float b, float c, float d) {
+        return a * (b + (c / d));
     }
 }
