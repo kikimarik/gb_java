@@ -14,6 +14,28 @@ public class Base {
 
         int[] simpleArr = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
         System.out.println(Arrays.toString(Base.getBoostArr(simpleArr, 2, 6)));
+
+        int[][] matrixWrap = new int[4][4];
+        Base.printMatrix(Base.getMatrix(matrixWrap));
+    }
+
+    private static void printMatrix(int[][] matrix) {
+        for (int[] ints : matrix) {
+            for (int anInt : ints) {
+                System.out.print(anInt);
+            }
+            System.out.println();
+        }
+    }
+
+    private static int[][] getMatrix(int[][] matrix) {
+        for (int rowIndex = 0; rowIndex < matrix.length; rowIndex++) {
+            for (int colIndex = 0; colIndex < matrix[rowIndex].length; colIndex++) {
+                matrix[rowIndex][colIndex] = colIndex == rowIndex ? 1 : 0;
+            }
+        }
+
+        return matrix;
     }
 
     private static int[] getBoostArr(int[] arr, int kof, int to) {
