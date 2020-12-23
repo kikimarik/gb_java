@@ -27,6 +27,37 @@ public class Base {
 
         int[] simpleArr3 = {2, 2, 2, 1, 2, 2, 10, 1};
         System.out.println(isBalancable(simpleArr3));
+
+        int[] simpleArr4 = {3, 5, 6, 1, 2, 99, 821, 11, 22};
+        System.out.println(Arrays.toString(arrShift(simpleArr4, 2)));
+        System.out.println(Arrays.toString(arrShift(simpleArr4, -2)));
+    }
+
+    private static int[] arrShift(int[] arr, int offset){
+        if (offset == 0) {
+            return arr;
+        }
+        int stopIndex = offset < 0 ? offset * -1 : offset;
+        for (int i = 0; i < stopIndex; i++) {
+            int actualIndex;
+            int value = arr[i];
+            int currentIndex = i;
+
+            actualIndex = currentIndex + offset;
+            if (offset < 0) {
+                actualIndex = arr.length + actualIndex;
+            } else {
+                actualIndex = actualIndex >= arr.length ? actualIndex - arr.length : actualIndex;
+            }
+            if (actualIndex != i) {
+                arr[currentIndex] = arr[actualIndex];
+                currentIndex = actualIndex;
+            }
+
+            arr[currentIndex] = value;
+        }
+
+        return arr;
     }
 
     private static boolean isBalancable(int[] arr) throws Exception {
