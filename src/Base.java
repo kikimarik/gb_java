@@ -24,6 +24,28 @@ public class Base {
         int[] simpleArr2 = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
         System.out.println(getMinValue(simpleArr2));
         System.out.println(getMaxValue(simpleArr2));
+
+        int[] simpleArr3 = {2, 2, 2, 1, 2, 2, 10, 1};
+        System.out.println(isBalancable(simpleArr3));
+    }
+
+    private static boolean isBalancable(int[] arr) throws Exception {
+        if (arr.length < 2) {
+            throw new Exception("Can not balance array which length lt 2");
+        }
+        int leftBalance = 0;
+        for (int i = 0; i < arr.length; i++) {
+            leftBalance += arr[i];
+            int rightBalance = 0;
+            for (int j = arr.length - 1; j > i; j--) {
+                rightBalance += arr[j];
+            }
+            if (leftBalance == rightBalance) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     private static int getMaxValue(int[] arr) throws Exception {
