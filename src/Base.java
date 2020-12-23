@@ -8,6 +8,17 @@ public class Base {
         int[] binArr = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
         System.out.println(Arrays.toString(Base.getReverseBinArr(binArr, Base.MODE_CONDITION)));
         System.out.println(Arrays.toString(Base.getReverseBinArr(binArr, Base.MODE_MATH)));
+
+        int[] arrWrap = new int[8];
+        System.out.println(Arrays.toString(Base.getArr(arrWrap)));
+    }
+
+    private static int[] getArr(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = i * 3;
+        }
+
+        return arr;
     }
 
     private static int[] getReverseBinArr(int[] binArr, int mode) {
