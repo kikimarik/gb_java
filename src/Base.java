@@ -11,6 +11,17 @@ public class Base {
 
         int[] arrWrap = new int[8];
         System.out.println(Arrays.toString(Base.getArr(arrWrap)));
+
+        int[] simpleArr = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+        System.out.println(Arrays.toString(Base.getBoostArr(simpleArr, 2, 6)));
+    }
+
+    private static int[] getBoostArr(int[] arr, int kof, int to) {
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = arr[i] < to ? arr[i] * kof : arr[i];
+        }
+
+        return arr;
     }
 
     private static int[] getArr(int[] arr) {
