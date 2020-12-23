@@ -4,7 +4,10 @@ public class Base {
     static final int MODE_MATH = 1;
     static final int MODE_CONDITION = 2;
 
-    public static void main(String[] args) {
+    static final int MIN = 0;
+    static final int MAX = 1;
+
+    public static void main(String[] args) throws Exception {
         int[] binArr = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
         System.out.println(Arrays.toString(Base.getReverseBinArr(binArr, Base.MODE_CONDITION)));
         System.out.println(Arrays.toString(Base.getReverseBinArr(binArr, Base.MODE_MATH)));
@@ -17,6 +20,33 @@ public class Base {
 
         int[][] matrixWrap = new int[4][4];
         Base.printMatrix(Base.getMatrix(matrixWrap));
+
+        int[] simpleArr2 = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+        System.out.println(getMinValue(simpleArr2));
+        System.out.println(getMaxValue(simpleArr2));
+    }
+
+    private static int getMaxValue(int[] arr) throws Exception {
+        return getValue(arr, Base.MAX);
+    }
+
+    private static int getMinValue(int[] arr) throws Exception {
+        return getValue(arr, Base.MIN);
+    }
+
+    private static int getValue(int[] arr, int mode) throws Exception {
+        if (arr.length == 0) {
+            throw new Exception("Can not find value on empty array");
+        }
+        int value = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            switch (mode) {
+                case Base.MIN -> value = Math.min(value, arr[i]);
+                case Base.MAX -> value = Math.max(value, arr[i]);
+            }
+        }
+
+        return value;
     }
 
     private static void printMatrix(int[][] matrix) {
