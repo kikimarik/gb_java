@@ -88,6 +88,11 @@ public class TickTackToe {
         return false;
     }
 
+    /**
+     * Method also satisfy for the task 3
+     * @param marker user or ai marker
+     * @return boolean result of checking
+     */
     private boolean isEndOfGame(char marker) {
         int rowCounter = 0;
         int colCounter = 0;
