@@ -21,4 +21,21 @@ public class Employee {
         this.salary = salary;
         this.age = age;
     }
+
+    public void preview() {
+        String id = this.toString();
+        String[] fields = {
+                this.name,
+                this.position,
+                this.email,
+                this.phone,
+                this.salary,
+                String.valueOf(this.age)
+        };
+        System.out.println("START OBJECT " + id + " OUTPUT");
+        for (String field : fields) {
+            System.out.println(field);
+        }
+        System.out.println("END OBJECT " + id + " OUTPUT");
+    }
 }

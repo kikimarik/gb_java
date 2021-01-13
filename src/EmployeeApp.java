@@ -8,5 +8,6 @@ public class EmployeeApp {
                 "100000 rubles",
                 25
         );
+        employee.preview();
     }
 }
