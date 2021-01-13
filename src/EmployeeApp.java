@@ -1,4 +1,5 @@
 public class EmployeeApp {
+    private final static int OLDER_THEN = 40;
     public static void main(String[] args) {
         Employee employee = new Employee(
                 "Sergey Sorokin",
@@ -8,7 +9,7 @@ public class EmployeeApp {
                 "100000 rubles",
                 25
         );
-        employee.preview();
+        //employee.preview();
         Employee[] employees = new Employee[5];
         employees[0] = employee;
         employees[1] = new Employee(
@@ -43,5 +44,11 @@ public class EmployeeApp {
                 "The championship belt and ladies",
                 54
         );
+
+        for (Employee employeeObj : employees) {
+            if (employeeObj.isOlder(EmployeeApp.OLDER_THEN)) {
+                employeeObj.preview();
+            }
+        }
     }
 }

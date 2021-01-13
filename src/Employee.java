@@ -38,4 +38,8 @@ public class Employee {
         }
         System.out.println("END OBJECT " + id + " OUTPUT");
     }
+
+    public boolean isOlder(int age) {
+        return this.age > age;
+    }
 }
