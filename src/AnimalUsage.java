@@ -1,3 +1,4 @@
+import animal.Animal;
 import animal.Cat;
 import animal.Dog;
 
@@ -12,5 +13,10 @@ public class AnimalUsage {
         cat.run(15);
         cat.run(350); // over
         cat.swim(50); // disabled
+        Dog dog1 = new Dog("Spike");
+
+        System.out.println("There are " + Animal.instanceCounter + " animals.");
+        System.out.println("There are " + Dog.instanceCounter + " dogs.");
+        System.out.println("There are " + Cat.instanceCounter + " cats.");
     }
 }

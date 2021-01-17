@@ -5,8 +5,11 @@ public class Dog extends Animal {
     private static final int MAX_RUN_DISTANCE = 500;
     private static final int MAX_SWIM_DISTANCE = 10;
 
+    public static int instanceCounter = 0;
+
     public Dog(String name) {
         super(name);
+        Dog.instanceCounter++;
     }
 
     @Override

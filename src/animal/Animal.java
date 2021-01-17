@@ -3,9 +3,11 @@ package animal;
 public abstract class Animal {
 
     protected String name;
+    public static int instanceCounter = 0;
 
     protected Animal(String name) {
         this.name = name;
+        Animal.instanceCounter++;
     }
 
     public void run(int distance) {
