@@ -8,7 +8,9 @@ public class CatPlateUsage {
         molly.eat(plate); // try to feed hungry cat
         CatPlateUsage.checkHungry(molly);
         Cat silvester = new Cat("Silvester", 4);
+        plate.info();
         silvester.eat(plate); // try to feed hungry cat when no enough food
+        plate.info();
         CatPlateUsage.checkHungry(silvester);
         molly.eat(plate); // try to feed no hungry cat
     }
