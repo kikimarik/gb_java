@@ -3,8 +3,10 @@ import catplate.Plate;
 
 public class CatPlateUsage {
     public static void main(String[] args) {
-        Cat cat = new Cat("Barsik", 5);
-        Plate plate = new Plate(100);
+        Cat cat = new Cat("Barsik", 6);
+        Plate plate = new Plate(10);
+        plate.info();
+        cat.eat(plate);
         plate.info();
         cat.eat(plate);
         plate.info();

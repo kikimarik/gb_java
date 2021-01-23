@@ -7,8 +7,11 @@ public class Plate {
         this.food = food;
     }
 
-    public void decreaseFood(int n) {
-        food -= n;
+    public void decreaseFood(int n) throws OutOfFoodLimitException {
+        if (this.food < n) {
+            throw new OutOfFoodLimitException("No enough food =(");
+        }
+        this.food -= n;
     }
 
     public void info() {

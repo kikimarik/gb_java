@@ -10,6 +10,10 @@ public class Cat {
     }
 
     public void eat(Plate p) {
-        p.decreaseFood(appetite);
+        try {
+            p.decreaseFood(appetite);
+        } catch (OutOfFoodLimitException exception) {
+            System.out.println(this.name + " is hungry.. " + exception.getMessage());
+        }
     }
 }
