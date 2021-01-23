@@ -3,16 +3,20 @@ import catplate.Plate;
 
 public class CatPlateUsage {
     public static void main(String[] args) {
-        Cat molly = new Cat("Molly kitty", 3);
-        Plate plate = new Plate(6);
-        molly.eat(plate); // try to feed hungry cat
-        CatPlateUsage.checkHungry(molly);
-        Cat silvester = new Cat("Silvester", 4);
-        plate.info();
-        silvester.eat(plate); // try to feed hungry cat when no enough food
-        plate.info();
-        CatPlateUsage.checkHungry(silvester);
-        molly.eat(plate); // try to feed no hungry cat
+        Plate plate = new Plate(10);
+        Cat[] cats = {
+                new Cat("Tom", 2), // done
+                new Cat("Molly", 1), // done
+                new Cat("Fat guy", 6), // done
+                new Cat("Augustin", 3), // fail
+                new Cat("Dr. Bob", 2), // fail
+                new Cat("Lizzy", 1), // done
+                new Cat("Stacy", 2), // fail
+        };
+        for (Cat cat : cats) {
+            cat.eat(plate);
+            CatPlateUsage.checkHungry(cat);
+        }
     }
 
     private static void checkHungry(Cat cat) {
